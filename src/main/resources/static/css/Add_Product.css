@@ -1,0 +1,117 @@
+@charset "ISO-8859-1"; 
+ 
+body { 
+ background-image: url('https://as1.ftcdn.net/v2/jpg/06/33/69/18/1000_F_633691819_PzFAf9gp4Xkkh8XtTdfmDP1mvdq9dhTC.jpg'); 
+  
+     background-size: cover; /* Ensures the background image covers the entire viewport */ 
+     background-position: center; /* Centers the background image */ 
+     background-attachment: fixed; /* Keeps the background image fixed while scrolling */ 
+     background-repeat: no-repeat; /* Prevents the background image from repeating */ 
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+     margin: 0; 
+     padding: 0; 
+     height: 100vh; 
+   
+   
+  
+} 
+ 
+.back-link { 
+    display: inline-block; 
+    margin: 20px; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+ background-color: #c9356c; 
+    /* primary2 color */ 
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+} 
+ 
+.back-link:hover { 
+ background-color: #ff347f; 
+   /* Green color */ 
+} 
+ 
+.addProducts { 
+    
+    width: 400px; 
+    padding: 20px; 
+    margin: 50px auto; 
+    text-align: center;  
+   
+     border-radius: 10px; 
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+     position: relative; 
+     overflow: hidden; 
+     color: #222629; 
+     transition: transform 0.3s, box-shadow 0.3s; 
+  
+} 
+.addProducts:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+} 
+ 
+.addProducts h3 { 
+    color: #ff347f; /* primary2 color */ 
+    margin-bottom: 20px; 
+    font-size: 26px; 
+    font-weight: bolder; 
+} 
+ 
+ 
+.input-group { 
+    width: 100%; 
+    margin-bottom: 15px; 
+}  
+ 
+form { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+} 
+ 
+label { 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: rgb(0, 0, 0); /* Light color for labels */ 
+    text-align: left; 
+} 
+ 
+input, textarea { 
+    padding: 10px; 
+    border: 2px solid rgb(0, 0, 0); /* Green color */ 
+    border-radius: 5px; 
+    font-size: 16px; 
+    color: rgb(0, 0, 0); /* Light text color */ 
+    background-color: rgb(255, 255, 255); /* Dark input background */ 
+    width: calc(100% - 20px); 
+} 
+ 
+input::placeholder, textarea::placeholder { 
+    color: #6b6e70; /* Muted color for placeholders */ 
+} 
+ 
+button { 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #c9356c; /* Green color */ 
+    color: #fff; 
+    font-size: 18px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s; 
+} 
+ 
+button:hover { 
+    background-color: #ff347f; /* Lighter green for hover */ 
+    transform: translateY(-2px); 
+} 
+ 
+button:focus { 
+    outline: none; 
+}

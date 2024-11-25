@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>CAKE : ABOUT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/About.css}" />
+</head>
+<body>
+    <nav th:replace="~{Navigation::navbar()}">    
+    </nav>
+    <div class="background-overlay">
+        <div class="container">
+            <div class="header">
+                <h1>About Us</h1>
+                <p>Welcome to Cake & Bake, where every bite is a delightful experience. Our journey began with a passion for baking and a commitment to bring the finest baked goods to our community. We believe in the art of baking and the joy it brings to every occasion.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2018, Cake & Bake started as a small family-owned bakery with a dream to create delicious, high-quality baked goods that everyone can enjoy. Over the years, we have grown, but our commitment to quality and customer satisfaction remains the same. Each day, our talented bakers craft a wide variety of treats, from classic bread and pastries to custom cakes and innovative desserts.</p>
+                </div>
+                <div class="card">
+                    <h3>Our Mission</h3>
+                    <p>At Cake & Bake, our mission is to provide our customers with the freshest and most delicious baked goods made from the finest ingredients. We are dedicated to maintaining the highest standards of quality and service, ensuring that every product we offer is a testament to our love for baking.</p>
+                </div>
+                <div class="card why-choose-us">
+                    <h3>Why Choose Us?</h3>
+                    <ul>
+                        <li><strong>Freshness Guaranteed:</strong> All our products are baked fresh daily to ensure you get the best taste and quality.</li>
+                        <li><strong>Custom Creations:</strong> Whether it's a birthday, wedding, or any special occasion, we offer custom cakes and pastries tailored to your needs.</li>
+                        <li><strong>Customer Satisfaction:</strong> Your happiness is our top priority. We strive to provide excellent service and delicious products that exceed your expectations.</li>
+                        <li><strong>Local Favorite:</strong> Our loyal customers are a testament to our dedication and love for baking. We are honored to be a cherished part of our community.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="icons">
+                <h3><i class="fa-brands fa-square-instagram"></i> : Cake&Bakes</h3>
+                <h3><i class="fa-solid fa-phone"></i> : +91-0763886377</h3>
+                <h3><i class="fa-solid fa-envelope"></i> : Cakes&Bakes@gmail.com</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

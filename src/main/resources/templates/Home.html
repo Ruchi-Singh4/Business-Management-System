@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CAKE : HOME</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/Home.css}" />
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vidanoka:wght@400;700&display=swap">
+
+</head>
+
+<body>
+    <nav th:replace="~{Navigation::navbar()}"></nav>
+	<div class="home-container">
+		<div class="hero">
+		        <div class="hero-text">
+		            <h1>"Cake & Bake"</h1>
+		            <h3>Delicious Cakes for every occasion!!</h3>
+					<div class="explore">
+						<a href="/products">Explore</a>
+					</div>
+		        </div>
+		    </div>
+	</div>
+</body>
+
+</html>

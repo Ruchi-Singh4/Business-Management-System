@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Admin_page.css}" />
+</head>
+<body>
+    <nav>
+        <a class="back" href="/login"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </nav>
+    <div class="container">
+        <div class="tables">
+            <div class="panel admins">
+                <h2>Admins</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Admin ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Number</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="admin :${admins}">
+                            <td th:text="${admin.adminId}"></td>
+                            <td th:text="${admin.adminName}"></td>
+                            <td th:text="${admin.adminEmail}"></td>
+                            <td th:text="${admin.adminNumber}"></td>
+                            <td>
+                                <a class="edit" href="" th:href="@{'/updateAdmin/'+${admin.adminId}}"><i class="fa-solid fa-pen"></i></a>
+                                <a class="delete" href="" th:href="@{'/deleteAdmin/'+${admin.adminId}}"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a class="btn add-admin" href="" th:href="@{/addAdmin}">Add Admin</a>
+            </div>
+
+            <div class="panel users">
+                <h2>Users</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Number</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="user :${users}">
+                            <td th:text="${user.u_id}"></td>
+                            <td th:text="${user.uname}"></td>
+                            <td th:text="${user.uemail}"></td>
+                            <td th:text="${user.unumber}"></td>
+                            <td>
+                                <a class="edit" href="" th:href="@{'/updateUser/'+${user.u_id}}"><i class="fa-solid fa-pen"></i></a>
+                                <a class="delete" href="" th:href="@{'/deleteUser/'+${user.u_id}}"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a class="btn add-user" href="" th:href="@{'/addUser'}">Add User</a>
+            </div>
+
+            <div class="panel products">
+                <h2>Products</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="product :${products}">
+                            <td th:text="${product.pid}"></td>
+                            <td th:text="${product.pname}"></td>
+                            <td th:text="${product.pprice}"></td>
+                            <td>
+                                <a class="edit" href="" th:href="@{'/updateProduct/'+${product.pid}}"><i class="fa-solid fa-pen"></i></a>
+                                <a class="delete" href="" th:href="@{'/deleteProduct/'+${product.pid}}"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a class="btn add-product" href="" th:href="@{'/addProduct'}">Add Product</a>
+            </div>
+
+            <div class="panel orders">
+                <h2>Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>User Email</th> 
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                            <th>Quantity</th>
+                            <th>Total Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="order :${orders}">
+                            <td th:text="${order.user.uname}"></td>
+                            <td th:text="${order.user.uemail}"></td>
+                            <td th:text="${order.oName}"></td>
+                            <td th:text="${order.oPrice}"></td>
+                            <td th:text="${order.oQuantity}"></td>
+                            <td th:text="${order.totalAmmout}"></td>
+                            <td th:text="${order.orderDate}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

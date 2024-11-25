@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Order Success</title>
+    <style>
+        body {
+            background-color: #fafafa;
+            background-image: url('https://as1.ftcdn.net/v2/jpg/06/33/69/18/1000_F_633691819_PzFAf9gp4Xkkh8XtTdfmDP1mvdq9dhTC.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+        }
+
+        .container h4 {
+            color: #ff347f;
+            margin-bottom: 20px;
+            font-size: 24px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .container h3 {
+            color: #222629;
+            font-family: 'Arial', sans-serif;
+            margin-bottom: 20px;
+            animation: slideIn 0.7s ease-in-out;
+        }
+
+        .container span {
+            color: #86c232;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #61892f;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: bounceIn 0.9s ease-in-out;
+        }
+
+        .back-link:hover {
+            background-color: #86c232;
+            transform: scale(1.05);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background-color: #ff347f;
+            top: -10px;
+            left: 50%;
+            animation: confetti 1s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: #f48db4;
+        }
+
+        .confetti:nth-child(even) {
+            background-color: #c9356c;
+        }
+
+        .confetti:nth-child(3n) {
+            background-color: #86c232;
+        }
+
+        .confetti:nth-child(4n) {
+            background-color: #61892f;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes confetti {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(300px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h4>Ordered Successfully... !!!</h4>
+        <h3>Your purchased amount is: <span th:text="'₹ '+${amount}+'/-'"></span></h3>
+        <a href="/product/back" class="back-link">Back</a>
+    </div>
+
+    <!-- Add multiple confetti elements -->
+    <div class="confetti" style="left: 10%; animation-duration: 2s;"></div>
+    <div class="confetti" style="left: 20%; animation-duration: 1.5s;"></div>
+    <div class="confetti" style="left: 30%; animation-duration: 2.5s;"></div>
+    <div class="confetti" style="left: 40%; animation-duration: 1.7s;"></div>
+    <div class="confetti" style="left: 50%; animation-duration: 2.2s;"></div>
+    <div class="confetti" style="left: 60%; animation-duration: 1.8s;"></div>
+    <div class="confetti" style="left: 70%; animation-duration: 2.4s;"></div>
+    <div class="confetti" style="left: 80%; animation-duration: 1.9s;"></div>
+    <div class="confetti" style="left: 90%; animation-duration: 2.3s;"></div>
+</body>
+
+</html>

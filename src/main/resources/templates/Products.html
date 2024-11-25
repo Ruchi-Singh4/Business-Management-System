@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CAKE : Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/Products.css}" />
+</head>
+
+<body>
+    <nav th:replace="~{Navigation::navbar()}"></nav>
+    <section class="products">
+        <div class="product-card" th:each="s: ${products}">
+            <img src="" alt="Product Image" />
+            <div class="product-info">
+                <h3><span class="name"  th:text="${s.pname}"></span></h3>
+                <h4><span th:text="'₹ ' + ${s.pprice}"></span></h4>
+				<h4><span class="desc" th:text="${s.pdescription}"></span></h4>
+                <a href="/login" class="buy-now">Buy Now</a>
+            </div>
+        </div>
+    </section>
+	<script>
+	    document.addEventListener("DOMContentLoaded", () => {
+	        const baseImageUrl = "/Images/image"; // Base URL for images
+	        const imageExtension = ".jpg"; // Image extension
+
+	        // Select all product cards
+	        document.querySelectorAll(".product-card").forEach((card, index) => {
+	            // Generate the image index based on the card position
+	            let imageIndex = index + 1; // Increment by 1 to match image numbers 1-10
+	            
+	            // Apply modulo operation to loop images if there are more than 4
+	            if (imageIndex > 10) {
+	                imageIndex = ((imageIndex - 1) % 10) + 1;
+	            }
+	            
+	            const imgElement = card.querySelector("img");
+	            // Set the src attribute for the image
+	            imgElement.src = `${baseImageUrl}${imageIndex}${imageExtension}`;
+	        });
+	    });
+	</script>
+
+</body>
+
+</html>

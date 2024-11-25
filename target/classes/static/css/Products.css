@@ -1,0 +1,105 @@
+@charset "ISO-8859-1";
+
+body {
+	background-image: url('https://as1.ftcdn.net/v2/jpg/06/33/69/18/1000_F_633691819_PzFAf9gp4Xkkh8XtTdfmDP1mvdq9dhTC.jpg');
+	    background-size: cover; /* Ensures the background image covers the entire viewport */
+	    background-position: center; /* Centers the background image */
+	    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+	    background-repeat: no-repeat;  /* Light background for the entire page */
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222629; /* Dark text color for contrast */
+}
+
+.desc{
+	color: gray;
+}
+
+.products {
+	background-color: rgba(255, 255, 255, 0.8);
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+		overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 120px;
+}
+
+.product-card {
+    background-color: white; /* White card background for better contrast */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    margin: 20px;
+    overflow: hidden;
+    width: 320px; /* Fixed width for consistency */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for image */
+    object-fit: cover; /* Ensure image covers area */
+}
+
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 .name{
+	font-size: large;
+    color: #ff347f; /* primary color for headings *//* Larger font size for better readability */
+}
+
+.product-info span {
+    color: #222629; /* Dark color for text */
+    font-weight: bold;
+	font-size: large;
+}
+
+.product-info .desc{
+	color: rgb(106, 98, 106);
+		font-size: medium;
+		font-weight: 300;
+}
+
+.buy-now {
+    display: inline-block;
+    color: #fff;
+    background-color: #c9356c; /* Darker pink for button background */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 12px 24px; /* Larger padding for button feel */
+    font-weight: bold;
+    font-size: 16px; /* Larger font size for button text */
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 15px;
+}
+
+.buy-now:hover {
+	color: aliceblue;
+    background-color: #ff347f; /* Lighter pink for hover effect */
+    transform: scale(1.05);
+}
+
+.buy-now:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 90%;
+    }
+}

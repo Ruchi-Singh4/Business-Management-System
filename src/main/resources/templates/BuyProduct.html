@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Buy Product</title>
+    <link rel="stylesheet" href="" th:href="@{/css/BuyProduct.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="welcome">
+        <h2 class="welcome-message">Welcome Back <span th:text="${name}"></span></h2>
+    </div>
+    <a class="back-link" href="/login">Back</a>
+    <div class="container">
+        <div class="left-section">
+            <form action="" th:action="@{/product/search}" method="post" class="search-form">
+                <h1>Product Search</h1>
+                <select name="productName" required>
+                    <option value="" disabled selected>Select an item</option>
+                    <option value="Cupcake">Cupcake</option>
+                    <option value="Belgian Chocolate">Belgian Chocolate</option>
+                    <option value="Blueberry Cheesecake">Blueberry Cheesecake</option>
+                    <option value="Kitkat Cake">Kitkat Cake</option>
+                    <option value="Classic Chocolate Cake">Classic Chocolate Cake</option>
+                    <option value="Butterscotch cake">Butterscotch cake</option>
+                    <option value="Mango Cake">Mango Cake</option>
+                    <option value="Rainbow Cake">Rainbow Cake</option>
+                    <option value="Vanilla Bean Delight">Vanilla Bean Delight</option>
+                    <option value="Red Velvet Cake">Red Velvet Cake</option>
+                </select>
+                <button type="submit">Search</button>
+				
+                <small class="error-message" th:text="${message}"></small>
+            </form>
+
+            <div th:if="${product != null}" class="product-details">
+                <form action="" th:action="@{/product/order}" th:object="${product}" method="post">
+                    <div class="proImg">
+                        <img src="/Images/image1.jpg" alt="img"/>
+                    </div>
+                    <label>Product Name:</label>
+                    <input type="text" name="oName" th:value="${product.pname}" readonly />
+                    <label>Product Price:</label>
+                    <input type="text" name="oPrice" th:value="${product.pprice}" readonly />
+                    <label>Product Description:</label>
+                    <input type="text" name="oDescription" th:value="${product.pdescription}" readonly />
+                    <label>Quantity:</label>
+                    <input type="number" placeholder="Minimum : 1 Item" min="1" name="oQuantity" />
+                    <button type="submit">Order Now</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div th:if="${orders != null}" class="order-details">
+                <h2>Your Orders</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Price</th>
+                            <th>Product Quantity</th>
+                            <th>Total Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="order :${orders}">
+                            <td th:text="${order.oName}"></td>
+                            <td th:text="${order.oPrice}"></td>
+                            <td th:text="${order.oQuantity}"></td>
+                            <td th:text="${order.totalAmmout}"></td>
+                            <td th:text="${order.orderDate}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

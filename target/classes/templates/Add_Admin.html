@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin : Add</title>
+    <link rel="stylesheet" href="" th:href="@{/css/Add_Admin.css}" />
+</head>
+
+<body>
+    <a class="back-link" href="/admin/services">Back to Services</a>
+    <div class="addAdmin">
+        <h3>ADD NEW ADMIN/PARTNER</h3>
+        <form action="" th:action="@{/addingAdmin}" method="post">
+            <label for="adminName">Admin Name:</label>
+            <input type="text" id="adminName" name="adminName" required />
+
+            <label for="adminEmail">Admin Email:</label>
+            <input type="email" id="adminEmail" name="adminEmail" required />
+
+            <label for="adminNumber">Admin Number:</label>
+            <input type="tel" id="adminNumber" name="adminNumber" pattern="[0-9]{10}" required />
+
+            <input type="hidden" name="adminPassword" value="1234" />
+            <button type="submit">Add Admin</button>
+        </form>
+    </div>
+</body>
+
+</html>

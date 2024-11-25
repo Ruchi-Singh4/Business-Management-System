@@ -1,0 +1,148 @@
+@charset "ISO-8859-1";
+
+body {
+	background-image: url('https://as1.ftcdn.net/v2/jpg/06/33/69/18/1000_F_633691819_PzFAf9gp4Xkkh8XtTdfmDP1mvdq9dhTC.jpg');
+	    background-size: cover; /* Ensures the background image covers the entire viewport */
+	    background-position: center; /* Centers the background image */
+	    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+	    background-repeat: no-repeat; 
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .back {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+	background-color: #c9356c;
+	padding: 10px 15px;
+	border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav .back:hover {
+    background: rgb(255, 0, 128);
+    color: #ddd;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.container {
+	background-color: rgba(255, 255, 255, 0.8);
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    overflow: auto;
+    padding: 20px;
+}
+
+.tables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.panel {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 100%;
+	margin-left: 5%;
+    max-width: 1200px;
+}
+
+.panel h2 {
+    color: #c9356c;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #c9356c;
+    color: #f4f4f4;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+
+
+tbody tr:hover {
+    background-color: #6b6e70;
+}
+
+th {
+    font-weight: bold;
+}
+
+td {
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #c9356c;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #c9356c;
+    transform: translateY(-3px);
+}
+
+.edit {
+    color: #c9356c;
+	background-color: #E3F2FD;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.edit:hover {
+    background-color: #E3F2FD;
+}
+
+.delete {
+	background-color: #E3F2FD;
+    color: #F44336;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.delete:hover {
+    background-color: #FFCDD2;
+}
